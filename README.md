@@ -35,7 +35,7 @@ Inside the created directory run the scripts in order to execute the application
 </p>
 
 ## License
-This project is under MIT license. See the archive [LICENSE](LICENSE.md) to more details.
+This project is under MIT license. See the archive [LICENSE](./LICENSE) to more details.
 
 ## Authors
 
