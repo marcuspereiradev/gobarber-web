@@ -57,10 +57,26 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 export const Error = styled.div`
+  display: flex;
   height: 20px;
   margin-left: 16px;
 
   svg {
     margin: 0;
+
+    &:hover + div span {
+      opacity: 1;
+    }
+  }
+
+  span {
+    background: #c53030;
+    color: #fff;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+
+    &::before {
+      border-color: #c53030 transparent;
+    }
   }
 `;
