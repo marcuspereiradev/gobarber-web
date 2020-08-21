@@ -1,5 +1,5 @@
 import React, { useRef, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { FiLogIn, FiLock, FiMail } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
@@ -22,6 +22,7 @@ interface SingInFormData {
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const history = useHistory();
 
   const { signIn } = useAuth();
   const { addToast } = useToast();
@@ -44,6 +45,13 @@ const SignIn: React.FC = () => {
           email: data.email,
           password: data.password,
         });
+
+        addToast({
+          type: 'success',
+          title: 'Logon realizado com sucesso!',
+        });
+
+        history.push('/dashboard');
       } catch (error) {
         if (error instanceof Yup.ValidationError) {
           const errors = getValidationErrors(error);
@@ -52,15 +60,15 @@ const SignIn: React.FC = () => {
 
           return;
         }
-      }
 
-      addToast({
-        type: 'error',
-        title: 'Erro na autenticação.',
-        description: 'Ocorreu um erro ao fazer login, cheque as credenciais.',
-      });
+        addToast({
+          type: 'error',
+          title: 'Erro na autenticação.',
+          description: 'Ocorreu um erro ao fazer login, cheque as credenciais.',
+        });
+      }
     },
-    [signIn, addToast],
+    [signIn, addToast, history],
   );
 
   return (
