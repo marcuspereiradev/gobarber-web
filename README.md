@@ -1,7 +1,21 @@
 <p align="center">
   <img src = "./docs/logo_with_bg.png" width=450>
 </p>
-<p align="center">Managing appointments in barbershops builting Reac.js, Typescript and Styled Components.</p>
+<p align="center">Managing appointments in barbershops builting React.js, Typescript and Styled Components.</p>
+
+## Features
+
+<p align="center">
+  <img src = "./docs/gobarber_signup.gif" width=800>
+</p>
+
+<p align="center">
+  <img src = "./docs/gobarber_signinandlogout.gif" width=800>
+</p>
+
+<p align="center">
+  <img src = "./docs/gobarber_tooltips.gif" width=800>
+</p>
 
 ## Installation
 
